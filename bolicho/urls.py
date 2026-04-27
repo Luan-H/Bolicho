@@ -22,6 +22,6 @@ from loja import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('loja.urls'))
-    
+    path('carrinho/', include('carrinho.urls')),
+    path('', include('loja.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
