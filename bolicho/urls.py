@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls.static import static
 from bolicho import views, settings
-from loja import views
+
 
 urlpatterns = [
+    path('', views.visualizarHome, name='home'),
     path('admin/', admin.site.urls),
     path('carrinho/', include('carrinho.urls')),
-    path('', include('loja.urls')),
+    path('loja/', include('loja.urls')),
     path('contas/', include('contas.urls')),
+    path('produto/<slug:categoria_slug>/', views.visualizarLoja, name='home_por_categoria')
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

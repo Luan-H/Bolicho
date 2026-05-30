@@ -4,6 +4,6 @@ from loja import views
 
 urlpatterns = [
     path('', views.visualizarLoja, name='loja'),
-    path('<slug:categoria_slug>/',views.visualizarLoja, name='produtos_por_categoria'),
-    path('<slug:categoria_slug>/<slug:produto_slug>',views.visualizarDetalhesProduto ,name='produto_detalhe')
+    path('categoria/<slug:categoria_slug>/',views.visualizarLoja, name='produtos_por_categoria'),
+    path('categoria/<slug:categoria_slug>/<slug:produto_slug>',views.visualizarDetalhesProduto ,name='produto_detalhe')
 ]
